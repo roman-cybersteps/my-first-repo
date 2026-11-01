@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search Demo</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; display: flex; flex-direction: column; min-height: 100vh; }
+    header { display: flex; justify-content: flex-end; align-items: center; padding: 12px 20px; gap: 16px; font-size: 14px; }
+    header a { color: #202124; text-decoration: none; }
+    header a:hover { text-decoration: underline; }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: #1a73e8; color: #fff;
+              display: flex; align-items: center; justify-content: center; font-weight: bold; }
+    .signin { background: #1a73e8; color: #fff !important; padding: 9px 23px; border-radius: 4px; }
+    main { flex: 1; display: flex; flex-direction: column; align-items: center; margin-top: 12vh; }
+    .logo { font-size: 80px; font-weight: bold; letter-spacing: -3px; margin-bottom: 28px; }
+    .b { color: #4285f4; } .r { color: #ea4335; } .y { color: #fbbc05; } .g { color: #34a853; }
+    .box { width: min(580px, 90vw); display: flex; border: 1px solid #dfe1e5; border-radius: 24px; padding: 0 20px; }
+    .box:hover, .box:focus-within { box-shadow: 0 1px 6px rgba(32,33,36,.28); border-color: transparent; }
+    .box input { flex: 1; border: none; outline: none; font-size: 16px; padding: 13px 0; background: none; }
+    .buttons { margin-top: 28px; display: flex; gap: 12px; }
+    .buttons button { background: #f8f9fa; border: 1px solid #f8f9fa; border-radius: 4px; padding: 10px 16px;
+                      font-size: 14px; color: #3c4043; cursor: pointer; }
+    .buttons button:hover { border-color: #dadce0; box-shadow: 0 1px 1px rgba(0,0,0,.1); }
+    footer { background: #f2f2f2; color: #70757a; font-size: 14px; padding: 15px 30px; border-top: 1px solid #dadce0; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#">Gmail</a>
+    <a href="#">Images</a>
+    {% if name %}
+      <span>Hi, {{ name }}</span>
+      <div class="avatar">{{ name[0]|upper }}</div>
+    {% else %}
+      <a class="signin" href="#">Sign in</a>
+    {% endif %}
+  </header>
+
+  <main>
+    <div class="logo">
+      <span class="b">S</span><span class="r">e</span><span class="y">a</span><span class="b">r</span><span class="g">c</span><span class="r">h</span>
+    </div>
+    <form class="box" action="#">
+      <input type="text" autofocus>
+    </form>
+    <div class="buttons">
+      <button type="button">Search</button>
+      <button type="button">I'm Feeling Lucky</button>
+    </div>
+  </main>
+
+  <footer>Demo page</footer>
+</body>
+</html>
